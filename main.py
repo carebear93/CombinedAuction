@@ -1,45 +1,77 @@
+# Library
 import random
 import csv
 import pandas as pd
 import numpy as np
 import termcolor
 import colorama
+import datetime
+import time
+import decimal
 
+# Library Module
 from colorama import Fore
 from colorama import init
 from termcolor import colored
-from hello import introduction
 from numpy import genfromtxt
+from datetime import datetime, timedelta
 
-#############################################
-#############################################
-RESERVE_RATE = 0.4
+# Class import
+from hello import *
+from auction import english_auction
+from globalVarible import startingPrice, Location, Destination, ticket_id
+from bidderAgent import bidderAgent
 
-#towns = np.genfromtxt ('towns.csv', delimiter=",")
-with open('towns.csv', 'rb') as csvfile:
-    towns = list(csv.reader(csvfile))
+"""
+Made by Kristian Care 14/04/2019 | University of Aberdeen
+"""
+class Main:
+    #############################################
+    #############################################
+    ##############Import Varibles################
+    a = bidderAgent()
+    g = globalVarible()
+    h = hello()
+    e = english_auction()
+    ##############Import Varibles################
+    #############################################
+    #############################################
 
-# Ticket varibles
-Location = (random.choice(towns))
-Destination = (random.choice(towns))
-#############################################
-#############################################
-introduction()
+    """
+    Please see globalVarible.py for varibles & descriptions
+    """
+    def introduction():
+        print ("##########################################")
+        print ("")
+        print ("Welcome to the combined auction system!")
+        print ("This program asks you to pick an intial price to begin an english auction.")
+        print ("From this, a reserve price is set, and both prices are assigned to a random train ticket...")
+        print ("Once you are happy with the parameters the auction will begin...")
+        print ("Enjoy!")
+        print ("")
+        print ("##########################################")
+        print ("")
+        print ("")
+    introduction()
 
-print (Fore.YELLOW + "Auctioneer: Welcome to the Auction!")
+    # Function to announce to ticket to be AUCTIONED
+    def cast_ticketInfo():
+        print ("")
+        print ("#####TICKET TO BE AUCTIONED#####")
+        print ("   Ticket ID: ", ticket_id)
+        print ("   Ticket Location: ", Location)
+        print ("   Ticket Destiantion: ", Destination)
+        print ("   Starting Price: ", startingPrice)
+        print ("   Reserve Price: ", reservePrice)
+        print ("#####TICKET TO BE AUCTIONED#####")
+        print ("")
 
-# User sets intial price of the ticket
-initialPrice = input("Auctioneer: Set initial price: ")
+    cast_ticketInfo()
 
-# Reserve price determined from the intial price
-reservePrice = initialPrice * RESERVE_RATE
-print ("Auctioneer: Reserve price set at", reservePrice)
-
-# Generated tickets are stored in an Create generateTicket Function
-def generateTicket():
-    print (" ")
-    print ("##########Ticket to be Auctioned!##########")
-    ticket = ["ID:",random.randint(1,99), "Location", Location, "Destination", Destination, "Starting Price:", initialPrice, "Reserve Price", reservePrice]
-    print (ticket)
-
-generateTicket()
+    answer = input("Being the auction?: [y/n]: ")
+    if not answer or answer[0].lower() != 'y':
+        print("You did not indicate approval")
+        exit(1)
+    else:
+        a.set_Budget()
+        e.englishAuction()
