@@ -38,17 +38,17 @@ class english_auction:
     # Function to check for a winner!
     # If there is only 1 bidder they win!
 
-    def englishAuction():
-        print ("Auctioneer: OPEN-CRY! ", ticket_id, "starting price at ", startingPrice)
+    def englishAuction(self):
+        global auctionRound
+        print ("Auctioneer: OPEN-CRY! ", ticket_id, "starting price at ", initialPrice)
         # While there is no winner for the auction
         while currentBid == 1:
             if auctionWinner == False:
                 # New round!
-                global auctionRound
                 auctionRound += 1
                 # Announce round and allow bids!
                 print ("Auctioneer: Round ", auctionRound,"place your bids!")
-                # Agent makes bid if within budget
+                # Agent msakes bid if within budget
                 b.bid()
                 # Initate round timer
                 run = auctionWinner
@@ -63,9 +63,7 @@ class english_auction:
                         # Increment the minute total
                         mins += 1
                 if currentBid == 1:
-                    increasePrice + startingPrice
+                    increasePrice + initialPrice
                 #ea.checkForWinner()
             else:
                 print ("The auction has concluded!")
-
-    englishAuction()

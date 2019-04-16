@@ -19,7 +19,7 @@ from datetime import datetime, timedelta
 # Class import
 from hello import *
 from auction import english_auction
-from globalVarible import startingPrice, Location, Destination, ticket_id
+from globalVarible import initialPrice, Location, Destination, ticket_id
 from bidderAgent import bidderAgent
 
 """
@@ -52,7 +52,6 @@ class Main:
         print ("##########################################")
         print ("")
         print ("")
-    introduction()
 
     # Function to announce to ticket to be AUCTIONED
     def cast_ticketInfo():
@@ -61,13 +60,14 @@ class Main:
         print ("   Ticket ID: ", ticket_id)
         print ("   Ticket Location: ", Location)
         print ("   Ticket Destiantion: ", Destination)
-        print ("   Starting Price: ", startingPrice)
+        print ("   Starting Price: ", initialPrice)
         print ("   Reserve Price: ", reservePrice)
         print ("#####TICKET TO BE AUCTIONED#####")
         print ("")
 
+    introduction()
+    initialPrice = int(input("Please set the initial price: "))
     cast_ticketInfo()
-
     answer = input("Being the auction?: [y/n]: ")
     if not answer or answer[0].lower() != 'y':
         print("You did not indicate approval")

@@ -20,5 +20,5 @@ class hello:
 
     # Reserve price determined from the intial price
     global reservePrice
-    reservePrice = startingPrice * RESERVE_RATE
+    reservePrice = initialPrice * RESERVE_RATE
     print ("Reserve price set at", reservePrice)

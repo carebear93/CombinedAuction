@@ -29,14 +29,14 @@ class bidderAgent:
         return self.firstname + " " + self.lastname
     """
 
-    def set_Budget():
+    def set_Budget(self):
         # Set Agents Budget
-        Budget = startingPrice * random.randint(155, 389)/100
+        Budget = initialPrice * random.randint(155, 389)/100
         print ("Budget for the Agent: ", Budget)
 
     def bid(self):
         global amountOfBids
-        if Budget <= startingPrice:
+        if Budget <= initialPrice:
             currentBid = 1
             if currentBid == 1:
                 amountOfBids += 1
@@ -46,4 +46,3 @@ class bidderAgent:
             if currentBid == 0:
                 amountOfBids -=1
             ("is out!")
-    set_Budget()

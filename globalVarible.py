@@ -25,11 +25,8 @@ class globalVarible:
     RESERVE_RATE = 0.4
 
     # User sets intial price of the ticket
-    #initialPrice = int(input("Please set the initial price: "))
-
-    # Ticket Starting Price
-    global startingPrice
-    startingPrice = 100
+    global initialPrice
+    initialPrice = 0
 
     # Ticket ID
     global ticket_id
@@ -62,7 +59,7 @@ class globalVarible:
 
     # Increase Offer
     global increasePrice
-    increasePrice = startingPrice / 5
+    increasePrice = initialPrice / 5
 
     # Amount of bids
     global amountOfBids
