@@ -1,12 +1,12 @@
 # Import Library
 import random
 import csv
-import pandas as pd
-import numpy as np
 import termcolor
 import colorama
 import time
 import decimal
+
+from globalVarible import *
 
 with open('towns.csv', 'r') as csvfile:
     towns = list(csv.reader(csvfile))
@@ -59,7 +59,11 @@ class globalVarible:
 
     # Increase Offer
     global increasePrice
-    increasePrice = initialPrice / 5
+    increasePrice = initialPrice / 3
+
+    # Decrease Offer
+    global decreasePrice
+    decreasePrice = initialPrice / 6
 
     # Amount of bids
     global amountOfBids

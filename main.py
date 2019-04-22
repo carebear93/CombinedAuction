@@ -1,8 +1,6 @@
 # Library
 import random
 import csv
-import pandas as pd
-import numpy as np
 import termcolor
 import colorama
 import datetime
@@ -17,21 +15,19 @@ from numpy import genfromtxt
 from datetime import datetime, timedelta
 
 # Class import
-from hello import *
 from auction import english_auction
-from globalVarible import initialPrice, Location, Destination, ticket_id
+from globalVarible import initialPrice, Location, Destination, ticket_id, RESERVE_RATE
 from bidderAgent import bidderAgent
 
 """
 Made by Kristian Care 14/04/2019 | University of Aberdeen
 """
+
 class Main:
     #############################################
     #############################################
     ##############Import Varibles################
     a = bidderAgent()
-    g = globalVarible()
-    h = hello()
     e = english_auction()
     ##############Import Varibles################
     #############################################
@@ -54,20 +50,23 @@ class Main:
         print ("")
 
     # Function to announce to ticket to be AUCTIONED
-    def cast_ticketInfo():
+    def cast_ticketInfo(id, loc, des, init, res):
         print ("")
         print ("#####TICKET TO BE AUCTIONED#####")
-        print ("   Ticket ID: ", ticket_id)
-        print ("   Ticket Location: ", Location)
-        print ("   Ticket Destiantion: ", Destination)
-        print ("   Starting Price: ", initialPrice)
-        print ("   Reserve Price: ", reservePrice)
+        print ("   Ticket ID: ", id)
+        print ("   Ticket Location: ", loc)
+        print ("   Ticket Destiantion: ", des)
+        print ("   Starting Price: ", init)
+        print ("   Reserve Price: ", res)
         print ("#####TICKET TO BE AUCTIONED#####")
         print ("")
 
     introduction()
     initialPrice = int(input("Please set the initial price: "))
-    cast_ticketInfo()
+    global reservePrice
+    reservePrice = initialPrice * RESERVE_RATE
+    cast_ticketInfo(ticket_id, Location, Destination, initialPrice, reservePrice)
+    global answer
     answer = input("Being the auction?: [y/n]: ")
     if not answer or answer[0].lower() != 'y':
         print("You did not indicate approval")
