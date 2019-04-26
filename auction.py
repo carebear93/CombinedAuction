@@ -13,6 +13,10 @@ from bidderAgent import *
 g = globalVarible()
 b = bidderAgent()
 
+"""
+Made by Kristian Care 14/04/2019 | University of Aberdeen
+"""
+
 class english_auction:
 
     ###################################
@@ -29,7 +33,10 @@ class english_auction:
                 # New round!
                 auctionRound += 1
                 # Announce round and allow bids!
+                print ("")
+                print ("###################################################")
                 print ("Auctioneer: Round ", auctionRound,"do I have", initialPrice,"?")
+                print ("###################################################")
                 # Agent msakes bid if within budget
                 b.bid()
                 # Initate round timer
@@ -60,7 +67,9 @@ class english_auction:
                     # New round!
                     auctionRound += 1
                     # Announce round and allow bids!
+                    print ("###################################################")
                     print ("Auctioneer: Round ", auctionRound,"place your bids!")
+                    print ("###################################################")
                     # Agent msakes bid if within budget
                     b.bid()
                     # Initate round timer

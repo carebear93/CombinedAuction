@@ -1,10 +1,18 @@
-# CombinedAuction
-Combined auction system.
+### PYTHON 3.7.2 ###
+###  WINDOWS 10  ###
 
-For MSC AI Course:
-  Delete PyCache on download, generate a new one when you run the program.
-  
-  To run the program open terminal in directory location and run the following command:
-    python main.py
-  
-  This program is for Python 3.7+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+This program is for the Combined Auction Assessment:                         @
+  To run, open console in the program directory and type:                    @
+    ① Make sure " Pycache " is deleted on first run                          @
+    ② " Python main.py "                                                     @
+  This program demonstrates a simplified version of a combined Auction!      @
+    Ω Generates random ticket                                                @
+    Ω Program demonstrates the ticket being auctioned                        @
+    Ω Shows interaction of auction                                           @
+    Ω Program is simplified from concepts proposed in the report             @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Created by Kristian Care | University of Aberdeen                            @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

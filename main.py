@@ -36,6 +36,8 @@ class Main:
     """
     Please see globalVarible.py for varibles & descriptions
     """
+
+    # Welcome message
     def introduction():
         print ("##########################################")
         print ("")
@@ -61,13 +63,19 @@ class Main:
         print ("#####TICKET TO BE AUCTIONED#####")
         print ("")
 
+    # Welcome
     introduction()
+    # Set Initial Price
     initialPrice = int(input("Please set the initial price: "))
+    # Set Reserve Price from Initial Price
     global reservePrice
     reservePrice = initialPrice * RESERVE_RATE
+    # Generate Ticket
     cast_ticketInfo(ticket_id, Location, Destination, initialPrice, reservePrice)
+    # Allow user to check confirm they are happy with the ticket
     global answer
     answer = input("Being the auction?: [y/n]: ")
+    # If yes begin auction, else exit program
     if not answer or answer[0].lower() != 'y':
         print("You did not indicate approval")
         exit(1)

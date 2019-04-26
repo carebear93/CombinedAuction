@@ -11,6 +11,10 @@ from globalVarible import *
 with open('towns.csv', 'r') as csvfile:
     towns = list(csv.reader(csvfile))
 
+"""
+Made by Kristian Care 14/04/2019 | University of Aberdeen
+"""
+
 class globalVarible:
     """
     This file sets important global varibles.
