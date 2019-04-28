@@ -7,18 +7,21 @@ import datetime
 import time
 import decimal
 
-# Import Class
-from globalVarible import *
-from threading import Thread
-
-g = globalVarible()
-
+from varibles import varibles
 """
 Made by Kristian Care 14/04/2019 | University of Aberdeen
 """
 
+v = varibles()
+
+Budget = 0
+amountOfBids = 0
+currentBid = 1
+
 #class bidderAgent(Thread):
 class bidderAgent:
+
+    # TODO: Turn class into list to have multiple bidders!
 
     """__init__() functions as the class constructor"""
 
@@ -30,21 +33,30 @@ class bidderAgent:
     def Name(self):
         return self.firstname + " " + self.lastname
     """
+    """global Budget
+    Budget = 0
 
-    def set_Budget(self):
-        # Set Agents Budget
-        Budget = initialPrice * random.randint(155, 389)/100
-        print ("Budget for the Agent: ", Budget)
+    # Agent current bid
+    global currentBid
+    currentBid = 1
+
+    # Amount of bids
+    global amountOfBids
+    amountOfBids = 0"""
+    def setBudget(self):
+        global Budget
+        Budget = v.initialPrice * random.randint(155, 389)/100
 
     def bid(self):
-        # Bid function
         global amountOfBids
-        if Budget <= initialPrice:
+        global currentBid
+        global Budget
+        if Budget <= v.initialPrice:
             currentBid = 1
             if currentBid == 1:
                 amountOfBids += 1
             print (" ")
-            print ("Participant: I will bid this round!")
+            print ("Agent: I shall bid this round!")
             print (" ")
         else:
             currentBid = 0
